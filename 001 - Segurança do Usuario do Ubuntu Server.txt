@@ -17,7 +17,7 @@
 #
     #ls -ld /home/username
 #
-    #A saída a seguir mostra que o diretório /home/usernametem permissões legíveis para o mundo:
+    #A saída a seguir mostra que o diretório /home/username tem permissões legíveis para o mundo:
 #
     #drwxr-xr-x  2 username username    4096 2007-10-02 20:03 username
 #
@@ -29,7 +29,7 @@
 #
         #Algumas pessoas tendem a usar a opção recursiva (-R) indiscriminadamente, que modifica todas as pastas e arquivos filhos, mas isso não é necessário e pode gerar outros resultados indesejáveis. O diretório pai sozinho é suficiente para impedir o acesso não autorizado a qualquer coisa abaixo do pai.
 #
-    #Uma abordagem muito mais eficiente para o assunto seria modificar as permissões padrão globais do adduser ao criar as pastas pessoais do usuário. Basta editar o arquivo /etc/adduser.confe modificar o DIR_MODEvariável para algo apropriado, para que todos os novos diretórios pessoais recebam as permissões corretas.
+    #Uma abordagem muito mais eficiente para o assunto seria modificar as permissões padrão globais do adduser ao criar as pastas pessoais do usuário. Basta editar o arquivo /etc/adduser.conf e modificar o DIR_MODEvariável para algo apropriado, para que todos os novos diretórios pessoais recebam as permissões corretas.
 #
     #DIR_MODE=0750
 #
