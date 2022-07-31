@@ -1,0 +1,43 @@
+#############################################################
+#  Artigo tirado do Site Ubuntu                             #
+#  Traduzido por Joelson de Souza Farias                    #
+#  Aula 01 do Ubuntu Server                                 #
+#  Youtube: https://www.youtube.com/c/JoelsonSouzaTH        #
+#  Github: https://github.com/shivaom21                     #
+#  Auterado em 31/07/2022                                   #
+#############################################################
+#
+#Segurança do perfil do usuário
+#
+#Quando um novo usuário é criado, o utilitário adduser cria um novo diretório inicial chamado /home/username. O perfil padrão é modelado após o conteúdo encontrado no diretório de /etc/skel, que inclui todas as noções básicas de perfil.
+#
+#Se o seu servidor for o lar de vários usuários, você deve prestar muita atenção às permissões do diretório inicial do usuário para garantir a confidencialidade. Por padrão, os diretórios pessoais do usuário no Ubuntu são criados com permissões mundiais de leitura/execução. Isso significa que todos os usuários podem navegar e acessar o conteúdo dos diretórios pessoais de outros usuários. Isso pode não ser adequado para o seu ambiente.
+#
+    #Para verificar as permissões atuais do diretório inicial do usuário, use a seguinte sintaxe:
+#
+    #ls -ld /home/username
+#
+    #A saída a seguir mostra que o diretório /home/usernametem permissões legíveis para o mundo:
+#
+    #drwxr-xr-x  2 username username    4096 2007-10-02 20:03 username
+#
+    #Você pode remover as permissões de leitura mundial usando a seguinte sintaxe:
+#
+    #sudo chmod 0750 /home/username
+#
+        #Observação
+#
+        #Algumas pessoas tendem a usar a opção recursiva (-R) indiscriminadamente, que modifica todas as pastas e arquivos filhos, mas isso não é necessário e pode gerar outros resultados indesejáveis. O diretório pai sozinho é suficiente para impedir o acesso não autorizado a qualquer coisa abaixo do pai.
+#
+    #Uma abordagem muito mais eficiente para o assunto seria modificar as permissões padrão globais do adduser ao criar as pastas pessoais do usuário. Basta editar o arquivo /etc/adduser.confe modificar o DIR_MODEvariável para algo apropriado, para que todos os novos diretórios pessoais recebam as permissões corretas.
+#
+    #DIR_MODE=0750
+#
+    #Após corrigir as permissões do diretório usando qualquer uma das técnicas mencionadas anteriormente, verifique os resultados usando a seguinte sintaxe:
+#
+    #ls -ld /home/username
+#
+    #Os resultados abaixo mostram que as permissões de leitura universal foram removidas:
+#
+    #drwxr-x---   2 username username    4096 2007-10-02 20:03 username
+#
