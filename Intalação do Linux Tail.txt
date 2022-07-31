@@ -1,0 +1,69 @@
+  #################################################
+  #Instalação do Linux Tail no VirtualBox         #
+  #Para instalar o VirtualBox no Debian ou Ubuntu,#
+  #execute o seguinte comando:                    #
+  #                                               #
+  #sudo apt install virtualbox                    #
+  #Para obter instruções sobre como instalar o    #
+  #VirtualBox em outros sistemas operacionais,    #
+  #consulte a documentação do VirtualBox.         #
+  #################################################
+
+
+  #Executando Tails de uma imagem ISO
+  #Primeiro, inicie o VirtualBox .
+
+  #Para criar uma nova máquina virtual:
+
+  #Escolha Máquina  ▸ Novo... .
+  #Na tela Nome e sistema operacional , especifique:
+  #Um nome de sua escolha.
+  #Tipo : Linux .
+  #Versão : Outro Linux (64 bits) .
+  #Clique em Avançar .
+  #Na tela Tamanho da memória :
+  #Aloque pelo menos 2048 MB de RAM.
+  #Clique em Avançar .
+  #Na tela do disco rígido :
+  #Escolha Não adicionar um disco rígido virtual .
+  #Clique em Criar .
+  #Clique em Continuar na caixa de diálogo de aviso
+  #sobre como criar uma máquina virtual sem disco rígido.
+  #Para configurar a máquina virtual para iniciar a partir
+  #de uma imagem ISO:
+
+  #Selecione a nova máquina virtual no painel esquerdo.
+  #Escolha Configurações da Máquina  ▸ ... .
+  #Selecione Sistema no painel esquerdo.
+  #Na seção Extended Features da guia Motherboard,
+  #certifique-se de que Enable I/O APIC esteja habilitado.
+  #Selecione Armazenamento no painel esquerdo.
+  #Selecione Vazio abaixo do IDE do controlador na lista
+  #de seleção da Árvore de armazenamento no painel direito.
+  #Clique no ícone do CD à direita da janela e selecione
+  #Escolher um arquivo de disco de CD/DVD virtual...
+  #para procurar a imagem ISO da qual você deseja iniciar o Tails.
+  #Verifique a opção Live CD/DVD .
+  #Clique em OK .
+  #Para iniciar a nova máquina virtual:
+
+  #Selecione a máquina virtual no painel esquerdo.
+  #Clique em Iniciar .
+  #O VirtualBox Guest Additions foi removido desde o Tails 4.27.
+  #Como resultado:
+
+  #O recurso de área de transferência compartilhada do VirtualBox
+  #não está disponível.
+
+  #A resolução da tela do Tails não pode ser alterada redimensionando
+  #a janela da máquina virtual no sistema operacional host.
+  #A resolução da tela deve ser alterada de dentro do Tails.
+
+  #Para alterar a resolução da tela de dentro do Tails, escolha Aplicativos
+  # ▸ Ferramentas do Sistema ▸ Configurações ▸ Telas ▸ Resolução .
+
+  #Você também pode precisar ajustar a janela da máquina virtual no sistema
+  #operacional host para ajustar a nova resolução de tela.
+
+  #Planejamos adicionar novamente o VirtualBox Guest Additions em uma versão
+  #futura do Tails. Veja #18728 .
